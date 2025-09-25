@@ -69,15 +69,19 @@ public class VideoServlet extends HttpServlet {
     }
 
     private void showVideoDetail(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Long id = Long.parseLong(req.getParameter("id"));
-        Video video = videoService.findById(id);
-        if (video != null) {
-            video.setViews(video.getViews() + 1);
-            videoService.update(video);
-            req.setAttribute("video", video);
-            req.getRequestDispatcher("/video_detail.jsp").forward(req, resp);
-        } else {
-            resp.sendError(HttpServletResponse.SC_NOT_FOUND);
+        try {
+            Long id = Long.parseLong(req.getParameter("id"));
+            Video video = videoService.findById(id);
+            if (video != null) {
+                video.setViews(video.getViews() + 1);
+                videoService.update(video);
+                req.setAttribute("video", video);
+                req.getRequestDispatcher("/video_detail.jsp").forward(req, resp);
+            } else {
+                resp.sendError(HttpServletResponse.SC_NOT_FOUND);
+            }
+        } catch (NumberFormatException e) {
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid video ID");
         }
     }
 

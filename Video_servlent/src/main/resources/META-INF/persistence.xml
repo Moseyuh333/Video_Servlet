@@ -10,7 +10,7 @@
 
         <properties>
         <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-        <property name="javax.persistence.jdbc.url" value="jdbc:mysql://websql1.mysql.database.azure.com:3306/testvideo?useSSL=true"/>
+        <property name="javax.persistence.jdbc.url" value="jdbc:mysql://websql1.mysql.database.azure.com:3306/murach?sslMode=REQUIRED&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC&amp;characterEncoding=UTF-8"/>
         <property name="javax.persistence.jdbc.user" value="ppk123"/>
         <property name="javax.persistence.jdbc.password" value="Pnkd19421978@"/>
         <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
