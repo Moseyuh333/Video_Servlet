@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE decorators PUBLIC "-//OpenSymphony Group//DTD SiteMesh 2.0 Decorators//EN" "http://www.opensymphony.com/sitemesh/decorator.dtd">
+
+<decorators>
+    <decorator name="user" page="/decorators/user_decorator.jsp">
+        <pattern>/home</pattern>
+        <pattern>/videos/*</pattern>
+        <pattern>/categories/*</pattern>
+    </decorator>
+
+    <decorator name="admin" page="/decorators/admin_decorator.jsp">
+        <pattern>/admin/*</pattern>
+    </decorator>
+</decorators>

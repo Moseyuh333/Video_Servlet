@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemesh>
+    <mapping>
+        <pattern>/*</pattern>
+        <decorator>/decorators/user_decorator.jsp</decorator>
+    </mapping>
+    <excludes>
+        <pattern>/login.jsp</pattern>
+        <pattern>/register.jsp</pattern>
+    </excludes>
+</sitemesh>
